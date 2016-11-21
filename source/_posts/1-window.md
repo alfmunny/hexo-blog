@@ -75,14 +75,20 @@ int main()
     return 1;
 
   //create a window with 800px width and 600px height, name it as what you like
-  m_Window = glfwCreateWindow(800, 600, "MyEngine", NULL, NULL);
+  GLFWwindow *window = glfwCreateWindow(800, 600, "MyEngine", NULL, NULL);
 
-  if (!m_Window)
+  if (!window)
   {
     std::cout << "Failed to initialize GLFW " << std::endl;
     return 1;
   }
-
+  glfwMakeContextCurrent(window);
+  while (!glfwWindowShouldClose(window))
+  {
+      glfwPollEvents();
+      glfwSwapBuffers(window);
+  }
+  glfwTerminate();
   system("PAUSE");
   return 0;
 }
@@ -90,4 +96,4 @@ int main()
 
 Now you should see a window.
 
-In the next chapter we are going to include the OpenGL Extension Wrangler Library.
+In the next chapter we are going to include the OpenGL Extension Wrangler Library and draw our first triangle.
