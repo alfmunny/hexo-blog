@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: game-engine | Alfmunny&#39;s Tech Blog</title>
+    <title>2. First Triangle | Alfmunny&#39;s Tech Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Alfmunny's Tech Blog">
-<meta property="og:url" content="https://alfmunny.github.io/hexo-blog/tags/game-engine/index.html">
+        <meta name="keywords" content="C++,game-engine,OpenGL" />
+    
+    <meta name="description" content="Add GLEWGLEW
+
+The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL ext">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. First Triangle">
+<meta property="og:url" content="https://alfmunny.github.io/hexo-blog/2016/11/21/first-triangle/index.html">
 <meta property="og:site_name" content="Alfmunny's Tech Blog">
+<meta property="og:description" content="Add GLEWGLEW
+
+The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL ext">
+<meta property="og:image" content="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/21/first-triangle/1.PNG">
+<meta property="og:updated_time" content="2016-11-23T00:07:54.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alfmunny's Tech Blog">
+<meta name="twitter:title" content="2. First Triangle">
+<meta name="twitter:description" content="Add GLEWGLEW
+
+The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL ext">
+<meta name="twitter:image" content="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/21/first-triangle/1.PNG">
     
 
     
@@ -116,122 +130,138 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>game-engine</em>
+    <a class="page-title-link" href="/hexo-blog/categories/Game-Engine/">Game Engine</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-first-triangle" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2. First Triangle
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/hexo-blog/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/hexo-blog/2016/11/21/first-triangle/" class="article-date">
+    <time datetime="2016-11-21T19:12:40.000Z" itemprop="datePublished">2016-11-21</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/OpenGL/">OpenGL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/game-engine/">game-engine</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/hexo-blog/2016/11/21/first-triangle/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/hexo-blog/2016/11/21/first-triangle/1.PNG)" alt="2. First Triangle" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/21/first-triangle/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Add-GLEW"><a href="#Add-GLEW" class="headerlink" title="Add GLEW"></a>Add GLEW</h2><p><a href="http://glew.sourceforge.net/" target="_blank" rel="external">GLEW</a></p>
+<blockquote>
+<p>The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL extensions are supported on the target platform.</p>
+</blockquote>
+<p>Download the library from the above link and add it to your project.</p>
+<p><em>Note: If you use the static library of GLEW - glew32s.lib, you have to set the GLEW_STATIC in the preprocessor. Otherwise it won’t work</em></p>
+<img src="/hexo-blog/2016/11/21/first-triangle/1.PNG" alt="Set the preprocessor for static linker" title="Set the preprocessor for static linker">
+<h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2><p>Now all is set, let’s draw one single point on in the window to get a sense of how OpenGL works.</p>
+<h4 id="Include-your-library"><a href="#Include-your-library" class="headerlink" title="Include your library"></a>Include your library</h4><p><code>#include &lt;GL/glew.h&gt;</code></p>
+<h4 id="Initialize-GLEW"><a href="#Initialize-GLEW" class="headerlink" title="Initialize GLEW"></a>Initialize GLEW</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if (glewInit() != GLEW_OK)</div><div class="line">&#123;</div><div class="line">  return 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Create-the-point"><a href="#Create-the-point" class="headerlink" title="Create the point"></a>Create the point</h4><p>Consider the point is 3-dimensional point at (0.0, 0.0, 0.0). Use a vector to store it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vector&lt;vector&lt;float&gt;&gt; vertices(1);</div><div class="line">vertices[0] = vector&lt;float&gt;(0.0f, 0.0f, 0.0f);</div></pre></td></tr></table></figure>
+<h4 id="Generate-a-Vertex-Buffer-Object"><a href="#Generate-a-Vertex-Buffer-Object" class="headerlink" title="Generate a Vertex Buffer Object"></a>Generate a Vertex Buffer Object</h4><p>Vertex Buffer Object is the way you send your data to GPU. We store our vertices data in the buffer and submit the buffer to GPU.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">GLuint VBO;</div><div class="line">glGenBuffers(1, &amp;VBO)</div><div class="line">// the first parameter is the how many Vertex Buffer Objects you want to generate. The second parameter is thre reference of the buffer.</div></pre></td></tr></table></figure>
+<h4 id="Bind-buffer"><a href="#Bind-buffer" class="headerlink" title="Bind buffer"></a>Bind buffer</h4><p>The buffer is generated in a generic way. It doesn’t know what type of the data is. It’s the job of the next function to tell the buffer what we intend to do with the buffer.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">glBindBuffer(GL_ARRAY_BUFFER, VBO);</div><div class="line"></div><div class="line">// Tell GPU the data to store in it is an array of vertices.</div></pre></td></tr></table></figure>
+<h4 id="Bind-data"><a href="#Bind-data" class="headerlink" title="Bind data"></a>Bind data</h4><p>Now we are going to bind our data to the buffer.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);</div></pre></td></tr></table></figure>
+<h4 id="Enable-Vertex-Attributes"><a href="#Enable-Vertex-Attributes" class="headerlink" title="Enable Vertex Attributes"></a>Enable Vertex Attributes</h4><p>By default of the pipeline, for vertices without shader the index we are referring to is 0.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">glEnableVertexAttribArray(0);</div></pre></td></tr></table></figure></p>
+<h4 id="Interpretation-of-the-data"><a href="#Interpretation-of-the-data" class="headerlink" title="Interpretation of the data"></a>Interpretation of the data</h4><p>Tell GPU how to interpret the data in buffer.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);</div></pre></td></tr></table></figure>
+<h4 id="Draw-the-Point"><a href="#Draw-the-Point" class="headerlink" title="Draw the Point"></a>Draw the Point</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">glDrawArrays(GL_POINTS, 0, 1);</div></pre></td></tr></table></figure>
+<p>Now you should see a point in the middle of the window.</p>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/hexo-blog/categories/Game-Engine/">Game Engine</a>
-            </p>
-            <p class="date"><time datetime="2016-11-21T19:12:40.000Z" itemprop="datePublished">2016-11-21</time></p>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/hexo-blog/2016/11/21/first-triangle/">2. First Triangle</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            Add GLEWGLEW
 
-The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL ext
-        </p>
+
+    <a data-url="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/21/first-triangle/" data-id="civu691gb00006ov1icvf6h6l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/hexo-blog/2016/11/13/1-window/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/hexo-blog/2016/11/13/1-window/window-1.PNG)" alt="1. Window" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/13/1-window/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/hexo-blog/categories/Game-Engine/">Game Engine</a>
-            </p>
-            <p class="date"><time datetime="2016-11-13T22:15:31.000Z" itemprop="datePublished">2016-11-13</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/hexo-blog/2016/11/13/1-window/">1. Window</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Create ProjectCreate am empty visual C++ project in Visual Studio(Get Visual Studio).
-Add GLFWTo write a game engine, we start with the window at first.
-OpenGL doesn’t concern about the management of 
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
+
     
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -291,6 +321,19 @@ OpenGL doesn’t concern about the management of
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/hexo-blog/2016/11/13/1-window/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">1. Window</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -448,11 +491,13 @@ OpenGL doesn’t concern about the management of
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/21/first-triangle/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
