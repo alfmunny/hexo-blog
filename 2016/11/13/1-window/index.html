@@ -6,7 +6,7 @@
     <title>1. Window | Alfmunny&#39;s Tech Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="C++,game-engine,OpenGL" />
+        <meta name="keywords" content="game-engine,OpenGL,C++" />
     
     <meta name="description" content="Create ProjectCreate am empty visual C++ project in Visual Studio(Get Visual Studio).
 Add GLFWTo write a game engine, we start with the window at first.
@@ -18,14 +18,14 @@ OpenGL doesn’t concern about the management of">
 <meta property="og:description" content="Create ProjectCreate am empty visual C++ project in Visual Studio(Get Visual Studio).
 Add GLFWTo write a game engine, we start with the window at first.
 OpenGL doesn’t concern about the management of">
-<meta property="og:image" content="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/13/1-window/window-1.PNG">
-<meta property="og:updated_time" content="2016-11-21T01:49:46.825Z">
+<meta property="og:image" content="https://alfmunny.github.io/hexo-blog/./images/1-window.PNG">
+<meta property="og:updated_time" content="2016-12-01T09:14:28.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1. Window">
 <meta name="twitter:description" content="Create ProjectCreate am empty visual C++ project in Visual Studio(Get Visual Studio).
 Add GLFWTo write a game engine, we start with the window at first.
 OpenGL doesn’t concern about the management of">
-<meta name="twitter:image" content="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/13/1-window/window-1.PNG">
+<meta name="twitter:image" content="https://alfmunny.github.io/hexo-blog/./images/1-window.PNG">
     
 
     
@@ -174,7 +174,8 @@ OpenGL doesn’t concern about the management of">
 <p>Run it to see if the GLFW works as we expect.</p>
 <p>If it succeed, we can implement our first window.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;GLFW/glfw3.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">if</span> (!glfwInit())</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line"></div><div class="line">  <span class="comment">//create a window with 800px width and 600px height, name it as what you like</span></div><div class="line">  GLFWwindow *window = glfwCreateWindow(<span class="number">800</span>, <span class="number">600</span>, <span class="string">"MyEngine"</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>);</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!window)</div><div class="line">  &#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to initialize GLFW "</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  glfwMakeContextCurrent(window);</div><div class="line">  <span class="keyword">while</span> (!glfwWindowShouldClose(window))</div><div class="line">  &#123;</div><div class="line">      glfwPollEvents();</div><div class="line">      glfwSwapBuffers(window);</div><div class="line">  &#125;</div><div class="line">  glfwTerminate();</div><div class="line">  system(<span class="string">"PAUSE"</span>);</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Now you should see a window.</p>
+<p>Now you should see a window with black background.</p>
+<img src="/hexo-blog/2016/11/13/1-window/window-3.PNG" alt="Window" title="Window">
 <p>In the next chapter we are going to include the OpenGL Extension Wrangler Library and draw our first triangle.</p>
 
         </div>
@@ -183,7 +184,7 @@ OpenGL doesn’t concern about the management of">
 
 
 
-    <a data-url="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/13/1-window/" data-id="ciw5ghx340000jov1wep65xwh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://alfmunny.github.io/hexo-blog/hexo-blog/2016/11/13/1-window/" data-id="civr65b4t000l2sv1409bbun0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -354,7 +355,7 @@ OpenGL doesn’t concern about the management of">
                             <a href="/hexo-blog/2016/11/21/first-triangle/" class="thumbnail">
     
     
-        <span style="background-image:url(/hexo-blog/2016/11/21/first-triangle/1.PNG)" alt="2. First Triangle" class="thumbnail-image"></span>
+        <span style="background-image:url(./images/2-triangle.PNG)" alt="2. First Triangle" class="thumbnail-image"></span>
     
     
 </a>
@@ -374,7 +375,7 @@ OpenGL doesn’t concern about the management of">
                             <a href="/hexo-blog/2016/11/13/1-window/" class="thumbnail">
     
     
-        <span style="background-image:url(/hexo-blog/2016/11/13/1-window/window-1.PNG)" alt="1. Window" class="thumbnail-image"></span>
+        <span style="background-image:url(./images/1-window.PNG)" alt="1. Window" class="thumbnail-image"></span>
     
     
 </a>
